@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ISB Hyderabad - MBA Program</title>
+  <link rel="icon" href="isb hyderabad.webp">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: #002D62;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar img {
+      height: 50px;
+      cursor: pointer;
+      border-radius: 50%;
+      margin-left: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 170px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00bcd4;
+    }
+
+    .content {
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(6px);
+      color: #000;
+      z-index: 1;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .rating-box {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      backdrop-filter: blur(4px);
+      padding: 5px 10px;
+      border-radius: 10px;
+      display: block;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stars-row {
+      display: flex;
+      gap: 5px;
+    }
+
+    .star {
+      font-size: 20px;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .star.selected,
+    .star.hover {
+      color: gold;
+    }
+
+    .rating-number {
+      font-weight: bold;
+      color: black;
+    }
+
+    h1,
+    h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: square;
+      margin-left: 20px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #002D62;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 60px;
+        font-size: 16px;
+      }
+
+      .image-overlay {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+
+      .rating-box {
+        top: 5px;
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-links {
+        gap: 7px;
+        width: 100%;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        padding: 5px;
+      }
+
+      .image-container {
+        height: 220px;
+        flex-direction: column;
+      }
+
+      .image-overlay {
+        top: 10px;
+        font-size: 16px;
+        padding: 6px 12px;
+      }
+
+      .rating-box {
+        top: 10px;
+        right: 7px;
+        padding: 5px 7px;
+      }
+
+      .stars-row .star {
+        font-size: 16px;
+      }
+
+      .rating-number {
+        font-size: 14px;
+      }
+    }
+
+    .like-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 8px 15px;
+      font-size: 16px;
+      background-color: #ff0066;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .like-button:hover {
+      background-color: #cc0055;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <img src="apna future.jpg" alt="ISB Logo" onclick="goHome()" />
+    <div class="nav-links">
+      <a href="#fees">Fee Structure</a>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#contact">Contact Us</a>
+      <button class="like-button" onclick="toggleLike('isb hyderabad', 'isb hyderabad.webp')">❤️ Like</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="image-container">
+      <img src="isb hyderabad.webp" alt="ISB Hyderabad Campus" />
+      <div class="rating-box">
+        <div class="stars-row">
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div><br>
+        <div class="rating-number" id="rating-number">Rating: 0</div>
+      </div>
+
+
+
+
+      <div class="image-overlay">All About MBA at ISB Hyderabad</div>
+    </div>
+
+    <h1>ISB Hyderabad - MBA Program</h1>
+
+    <h2 id="eligibility">Program Highlights:</h2>
+    <ul>
+      <li>Post Graduate Programme in Management (PGP)</li>
+      <li>1-Year Full-Time Residential MBA</li>
+      <li>Global faculty and international exposure</li>
+      <li>World-class infrastructure</li>
+    </ul>
+
+    <h2>Eligibility Criteria:</h2>
+    <p>A bachelor’s degree in any discipline. Valid GMAT/GRE score. Minimum 2 years of full-time work experience
+      preferred.</p>
+
+    <div class="fee-structure" id="fees">
+      <h2>Fee Structure:</h2>
+      <p>Tuition Fee: ₹38,00,000</p>
+      <p>Accommodation & Food: ₹2,50,000</p>
+      <p>Admission Fee: ₹3,00,000</p>
+      <p><strong>Total Cost: ₹43–45 lakh approx.</strong></p>
+    </div>
+
+    <h2>Admission Process:</h2>
+    <p>Apply online through the ISB admissions portal. Submit test scores, work experience, essays, and recommendations.
+      Personal interview for shortlisted candidates.</p>
+
+    <h2>Scholarship:</h2>
+    <ul>
+      <li>Merit-based scholarships</li>
+      <li>Diversity and Need-based aid</li>
+      <li>Corporate & Alumni-sponsored scholarships</li>
+    </ul>
+
+    <div class="reservation-policy">
+      <h2>Reservation Policy:</h2>
+      <p>ISB follows a merit-based selection. No caste-based reservations.</p>
+    </div>
+
+    <h2 id="contact">Contact Us:</h2>
+    <p>Email: pgp@isb.edu<br>Phone: +91-40-2300 7000</p>
+  </div>
+
+  <footer>
+    © 2025 ISB Hyderabad | All rights reserved.
+  </footer>
+  <script src="colleges.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APNA FUTURE</title>
+  <link rel="stylesheet" href="indexx.css">
+  <link rel="icon" href="apna future.jpg" type="image/jpg">
+</head>
+
+<body>
+  <!-- Navigation logo -->
+  <div class="navbar">
+    <div class="nav-logo">
+      <img src="apna future.jpg" alt="Logo" onclick="goHome()" />
+
+    </div>
+
+
+    
+     <div class="nav-links"> 
+      
+
+
+      <!-- Courses Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn">Courses ▾</button>
+        <div class="dropdown-content">
+          <a href="#btech">B.Tech</a>
+          <a href="#bba">BBA</a>
+          <a href="#bca">BCA</a>
+          <a href="#mca">MCA</a>
+          <a href="#mba">MBA</a>
+
+        </div>
+      </div>
+
+      <!-- Colleges Dropdown -->
+      <div class="dropdown">
+        <button class="dropdown-btn">Colleges ▾</button>
+        <div class="dropdown-content">
+          <a href="#" onclick="filterColleges('iit')">IITs</a>
+          <a href="#" onclick="filterColleges('nit')">NITs</a>
+          <a href="#" onclick="filterColleges('private')">Private Colleges</a>
+          <a href="#" onclick="filterColleges('government')">Government Colleges</a>
+        </div>
+      </div>
+
+
+
+
+
+
+      <!-- Guidance Pop-up -->
+      <a href="#" onclick="openForm()">Guidance</a>
+
+      <!-- Contact Us -->
+      <a href="#" onclick="showContact(event)">Contact Us</a>
+    </div>
+    <a href="liked.html" style="color: white; font-weight: bold; margin-right: 60px;">Liked Colleges ❤️</a>
+
+
+
+   
+
+
+  <div style="float: right; padding: 10px 30px 10px 10px ;">
+    <input type="search" id="searchInput" placeholder="Search colleges..." oninput="searchCollege()" style="padding: 5px; border-radius: 5px;" />
+  </div>
+</div>
+
+
+
+  <div class="main-header">
+    <h1>Welcome to Apna Future</h1>
+    <img src="apna future.jpg" alt="company logo">
+    <p>Your Guide to a Better Tomorrow</p>
+  </div>
+
+
+
+
+  <!-- Popup Form -->
+  <div class="popup-form" id="popup">
+    <div class="form-content">
+      <form id="guidanceForm">
+        <div id="messageArea" style="margin-top: 10px; color: green; font-weight: bold;">
+        </div>
+        <h3>Get Guidance</h3>
+        <input type="text" name="name" placeholder="Your Name">
+        <input type="number" name="age" placeholder="Your Age">
+        <input type="number" name="percentage1" placeholder="12th Score (%)">
+        <input type="number" name="percentage2" id="percentage1" placeholder="JEE Score">
+        <input type="text" name="interest" placeholder="Field of Interest">
+        <input type="text" name="area" placeholder="Preferred Area (e.g. Delhi, Bangalore)">
+        <input type="email" name="email" placeholder="Email or Phone">
+        <button type="button" id="suggestButton">Suggest College</button>
+        <button type="submit">submit </button>
+        <button onclick="closeForm()" style="background-color:#999;margin-top:10px;">Close</button> <br>
+
+      </form>
+    </div>
+  </div>
+
+  <!-- Contact Info -->
+  <div id="contact-info">
+    <h2>Contact Us</h2>
+    <p><strong>Name:</strong>Payal Yadav</p>
+    <p><strong>Email:</strong> Payal@apnafuture.in</p>
+    <p><strong>Phone:</strong> +91-9876543210</p>
+    <p><strong>Address:</strong> 101 Career Lane, Education City, India</p><br>
+    <p><strong>Name:</strong> Monika Yadav</p>
+    <p><strong>Email:</strong> Monika@apnafuture.in</p>
+    <p><strong>Phone:</strong> +91-9876654310</p>
+    <p><strong>Address:</strong> 101 Career Lane, Education City, India</p><br>
+    <p><strong>Name:</strong> Tanvee Chauhan</p>
+    <p><strong>Email:</strong> Tanvee@apnafuture.in</p>
+    <p><strong>Phone:</strong> +91-9868744310</p>
+    <p><strong>Address:</strong> 101 Career Lane, Education City, India</p><br>
+    <a href="#" onclick="showCourses()">← Back to Courses</a>
+  </div>
+  <!-- Colleges Section -->
+  <div id="colleges">
+    <div id="suggestionMessage"
+      style="text-align:center; font-size: 18px; font-weight: bold; color: green; display: none; margin: 20px 0;">
+    </div>
+
+    <!-- B.Tech Colleges -->
+    <div id="btech" class="course-section">
+      <h2 style="text-align:center;">B.Tech Colleges</h2>
+      <div class="card-row">
+
+        <div class="college-card" id="iit" data-name="IIT Delhi B.Tech">
+          <img src="iit delhi.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>IIT Delhi (B.Tech)</strong><br>
+          <a href="iit dehli btech.html">See more</a>
+        </div>
+        <div class="college-card" id="iit" data-name="IIT Bombay B.Tech">
+          <img src="iit bombay.png" alt="College Image" style="width:100px;"><br>
+          <strong>IIT Bombay (B.Tech)</strong><br>
+          <a href="iit bombay.html">See more</a>
+        </div>
+        <div class="college-card" id="nit" data-name="NIT Trichy B.Tech">
+          <img src="nit trichy.jpeg" alt="College Image" style="width:100px;"><br>
+          <strong>NIT Trichy (B.Tech)</strong><br>
+          <a href="nit trichy.html">See more</a>
+        </div>
+        <div class="college-card" id="iit" data-name="IIT Hyderabad B.Tech">
+          <img src="IIT-Hyderabad.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>IIT Hyderabad (B.Tech)</strong><br>
+          <a href="iit hyderabad btech.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="BITS Pilani B.Tech">
+          <img src="bits pilani.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>BITS Pilani (B.Tech)</strong><br>
+          <a href="bits pilni.html">See more</a>
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- BBA Colleges -->
+    <div id="bba" class="course-section">
+      <h2 style="text-align:center;">BBA
+        Colleges </h2>
+      <div class="card-row">
+        <div class="college-card" id="private" data-name="NMIMS Mumbai BBA">
+          <img src="nmims mumbai.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>NMIMS Mumbai (BBA)</strong><br>
+          <a href="nmims mumbai.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="Christ University BBA">
+          <img src="christ university.png" alt="College Image" style="width:100px;"><br>
+          <strong>Christ University (BBA)</strong><br>
+          <a href="christ bba.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="SRCC Delhi BBA">
+          <img src="srcc delhi.jpeg" alt="College Image" style="width:100px;"><br>
+          <strong>SRCC Delhi (BBA)</strong><br>
+          <a href="srcc dehli.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="Symbiosis Pune BBA">
+          <img src="symbiosis pune.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>Symbiosis Pune (BBA)</strong><br>
+          <a href="symbiosis.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="Amity Noida BBA">
+          <img src="amity noida.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>Amity Noida (BBA)</strong><br>
+          <a href="amity noida.html">See more</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- BCA Colleges -->
+    <div id="bca" class="course-section">
+      <h2 style="text-align:center;">BCA Colleges </h2>
+      <div class="card-row">
+        <div class="college-card" id="private" data-name="Christ University BCA">
+          <img src="christ university.png" alt="College Image" style="width:100px;"><br>
+          <strong>Christ University (BCA)</strong><br>
+          <a href="christ bca.html">See more</a>
+        </div>
+        <div class="college-card" id="government" data-name="Jamia Millia BCA">
+          <img src="jamia milia.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>Jamia Millia (BCA)</strong><br>
+          <a href="jamia millia.html">See more</a>
+        </div>
+        <div class="college-card" id="government" data-name="IP University BCA">
+          <img src="iip university.jpeg" alt="College Image" style="width:100px;"><br>
+          <strong>IP University (BCA)</strong><br>
+          <a href="ip.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="Loyola College BCA">
+          <img src="loyola university.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>Loyola College (BCA)</strong><br>
+          <a href="loyola.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="MIT Pune BCA">
+          <img src="mit pune.png" alt="College Image" style="width:100px;"><br>
+          <strong>MIT Pune (BCA)</strong><br>
+          <a href="mit pune.html">See more</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MCA Colleges -->
+    <div id="mca" class="course-section">
+      <h2 style="text-align:center;">MCA Colleges </h2>
+      <div class="card-row">
+        <div class="college-card" id="private" data-name="VIT Vellore MCA">
+          <img src="vit vellore.jpeg" alt="College Image" style="width:100px;"><br>
+          <strong>VIT Vellore (MCA)</strong><br>
+          <a href="vit vellore.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="SRM Chennai MCA">
+          <img src="srm chennai.jpeg" alt="College Image" style="width:100px;"><br>
+          <strong>SRM Chennai (MCA)</strong><br>
+          <a href="srm chenni.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="Manipal University MCA">
+          <img src="manipal university.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>Manipal University (MCA)</strong><br>
+          <a href="manipal.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="Amrita University MCA">
+          <img src="amrita university.webp" alt="College Image" style="width:100px;"><br>
+          <strong>Amrita University (MCA)</strong><br>
+          <a href="amrita.html">See more</a>
+        </div>
+        <div class="college-card" id="government" data-name="IGNOU MCA">
+          <img src="ignou.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>IGNOU (MCA)</strong><br>
+          <a href="ignou.html">See more</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- MBA Colleges -->
+    <div id="mba" class="course-section">
+      <h2 style="text-align:center;">MBA Colleges</h2>
+      <div class="card-row">
+        <div class="college-card" id="government" id="private" data-name="IIM Ahmedabad MBA">
+          <img src="iim ahmedabad.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>IIM Ahmedabad (MBA)</strong><br>
+          <a href="iim ahmdabad.html">See more</a>
+        </div>
+        <div class="college-card" id="government" data-name="FMS Delhi MBA">
+          <img src="fms delhi.gif" alt="College Image" style="width:100px;"><br>
+          <strong>FMS Delhi (MBA)</strong><br>
+          <a href="fms dehli.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="XLRI Jamshedpur MBA">
+          <img src="xlri jamshedpur.jpg" alt="College Image" style="width:100px;"><br>
+          <strong>XLRI Jamshedpur (MBA)</strong><br>
+          <a href="xlri jamshedpur.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="SPJIMR Mumbai MBA">
+          <img src="spjimr mumbai.webp" alt="College Image" style="width:100px;"><br>
+          <strong>SPJIMR Mumbai (MBA)</strong><br>
+          <a href="spjimr mumbai.html">See more</a>
+        </div>
+        <div class="college-card" id="private" data-name="ISB Hyderabad MBA">
+          <img src="isb hyderabad.webp" alt="College Image" style="width:100px;"><br>
+          <strong>ISB Hyderabad (MBA)</strong><br>
+          <a href="isb hyderabad.html">See more</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Apna Future. All rights reserved.</p>
+      <p>Helping students make informed career choices.</p>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+  <script src="indexx.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPJIMR Mumbai - MBA Program</title>
+  <link rel="icon" href="spjimr mumbai.webp">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: black;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar img {
+      height: 50px;
+      cursor: pointer;
+      border-radius: 50%;
+      margin-left: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 170px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #ff9900;
+    }
+
+    .content {
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(6px);
+      color: #000;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+
+    .rating-box {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background-color: transparent;
+      padding: 5px 10px;
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
+    }
+
+    .stars-row {
+      display: flex;
+      gap: 5px;
+    }
+
+    .star {
+      font-size: 20px;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .star.selected,
+    .star.hover {
+      color: gold;
+    }
+
+    .rating-number {
+      font-weight: bold;
+      color: black;
+    }
+
+    h1,
+    h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: square;
+      margin-left: 20px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .fee-structure,
+    .seat-matrix,
+    .reservation-policy {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 60px;
+        font-size: 16px;
+      }
+
+      .image-overlay {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+
+      .rating-box {
+        top: 5px;
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        align-items: center;
+        gap: 10px;
+      }
+
+      .nav-links {
+        gap: 7px;
+        width: 100%;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        padding: 5px;
+      }
+
+      .image-container {
+        height: 220px;
+        flex-direction: column;
+      }
+
+      .image-overlay {
+        top: 10px;
+        font-size: 16px;
+        padding: 6px 12px;
+      }
+
+      .rating-box {
+        top: 10px;
+        right: 7px;
+        padding: 5px 7px;
+      }
+
+      .stars-row .star {
+        font-size: 16px;
+      }
+
+      .rating-number {
+        font-size: 14px;
+      }
+    }
+
+
+    .like-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      padding: 8px 15px;
+      font-size: 16px;
+      background-color: #ff0066;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    .like-button:hover {
+      background-color: #cc0055;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <img src="apna future.jpg" alt="SPJIMR Logo" onclick="goHome()" />
+    <div class="nav-links">
+      <a href="#fees">Fee Structure</a>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#contact">Contact Us</a>
+      <button class="like-button" onclick="toggleLike('spjimr mumbai', 'spjimr mumbai.webp')">❤️ Like</button>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="college-info">
+      <div class="image-container">
+        <img src="spjimr mumbai.webp" alt="SPJIMR Campus" />
+        <div class="rating-box">
+          <div class="stars-row">
+            <span class="star" data-value="1">&#9733;</span>
+            <span class="star" data-value="2">&#9733;</span>
+            <span class="star" data-value="3">&#9733;</span>
+            <span class="star" data-value="4">&#9733;</span>
+            <span class="star" data-value="5">&#9733;</span>
+          </div><br>
+          <div class="rating-number" id="rating-number"> Rating: 0 </div>
+        </div>
+
+
+
+
+        <div class="image-overlay">All Information About MBA at SPJIMR Mumbai</div>
+      </div>
+    </div>
+
+    <h1>SPJIMR Mumbai - MBA Program</h1>
+
+    <h2 id="eligibility">Specializations Offered:</h2>
+    <ul>
+      <li>Finance</li>
+      <li>Marketing</li>
+      <li>Operations & Supply Chain</li>
+      <li>Information Management</li>
+      <li>Human Resource Management</li>
+    </ul>
+
+    <h2>Eligibility Criteria:</h2>
+    <p>Bachelor’s degree with minimum 50% marks. Valid CAT/XAT/GMAT score. Minimum 2 years of work experience preferred.
+    </p>
+
+    <div class="fee-structure" id="fees">
+      <h2>Fee Structure:</h2>
+      <p>Program Fee: ₹24,00,000 (approx. for entire course)</p>
+      <p>Includes tuition, hostel, and other academic charges.</p>
+    </div>
+
+    <h2>Admission Process:</h2>
+    <p>Apply online via SPJIMR website. Shortlisting based on profile and entrance exam. Followed by WAT and PI rounds.
+    </p>
+
+    <h2>Scholarship:</h2>
+    <ul>
+      <li>Need-based financial assistance</li>
+      <li>Merit-based scholarships</li>
+    </ul>
+
+    <div class="reservation-policy">
+      <h2>Reservation Policy:</h2>
+      <p>No government-based reservations. SPJIMR follows profile-based selection with diversity considerations.</p>
+    </div>
+
+    <h2 id="contact">Contact Us:</h2>
+    <p>Email: admissions.mba@spjimr.org<br>Phone: +91-22-61454300</p>
+  </div>
+
+  <footer>
+    © 2025 SPJIMR Mumbai | All rights reserved.
+  </footer>
+
+  <script src="colleges.js"></script>
+</body>
+
+</html>

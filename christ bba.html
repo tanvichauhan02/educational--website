@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christ University - BBA Program</title>
+  <link rel="icon" href="christ university.png" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .navbar {
+      background-color: black;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar img {
+      height: 50px;
+      cursor: pointer;
+      border-radius: 50%;
+      margin-left: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 170px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #00ffcc;
+    }
+
+    .content {
+      margin-top: 30px;
+      padding: 20px;
+    }
+
+    .image-container {
+      position: relative;
+      width: 100%;
+      height: 300px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(6px);
+      color: #000;
+      z-index: 1;
+      font-size: 22px;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .rating-box {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      background-color: transparent;
+      padding: 5px 10px;
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
+      display: block;
+    }
+
+    .stars-row {
+      display: flex;
+      gap: 5px;
+    }
+
+    .star {
+      font-size: 20px;
+      color: #aaa;
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+
+    .star.selected,
+    .star.hover {
+      color: gold;
+    }
+
+    .rating-number {
+      font-weight: bold;
+      color: black;
+    }
+
+    h1,
+    h2 {
+      color: #333;
+    }
+
+    ul {
+      list-style-type: square;
+      margin-left: 20px;
+      text-align: left;
+      display: inline-block;
+    }
+
+    .fee-structure,
+    .reservation-policy {
+      margin-top: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      text-align: left;
+    }
+
+    footer {
+      background-color: #000;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 1024px) {
+      .nav-links {
+        gap: 60px;
+        font-size: 16px;
+      }
+
+      .image-overlay {
+        font-size: 18px;
+        padding: 8px 16px;
+      }
+
+      .rating-box {
+        top: 5px;
+        right: 10px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        gap: 10px;
+      }
+
+      .nav-links {
+        gap: 7px;
+        width: 100%;
+      }
+
+      .nav-links a {
+        font-size: 13px;
+        padding: 5px;
+      }
+
+      .image-container {
+        height: 220px;
+        flex-direction: column;
+      }
+
+      .image-container img {
+        height: 100%;
+        width: 100%;
+      }
+
+      .image-overlay {
+        top: 10px;
+        font-size: 16px;
+        padding: 6px 12px;
+      }
+
+      .rating-box {
+        top: 10px;
+        right: 7px;
+        padding: 5px 7px;
+      }
+
+      .stars-row .star {
+        font-size: 16px;
+      }
+
+      .rating-number {
+        font-size: 14px;
+      }
+    }
+    
+    .like-button {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 8px 15px;
+  font-size: 16px;
+  background-color: #ff0066;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+}
+
+.like-button:hover {
+  background-color: #cc0055;
+}
+
+
+
+   
+
+
+
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <img src="apna future.jpg" alt="Christ Logo" onclick="goHome()" />
+    <div class="nav-links">
+      <a href="#fees">Fee Structure</a>
+      <a href="#eligibility">Eligibility</a>
+      <a href="#contact">Contact Us</a>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="image-container">
+      <img src="christ university.png" alt="Christ University Campus" />
+
+      <div class="rating-box">
+        <div class="stars-row">
+          <span class="star" data-value="1">&#9733;</span>
+          <span class="star" data-value="2">&#9733;</span>
+          <span class="star" data-value="3">&#9733;</span>
+          <span class="star" data-value="4">&#9733;</span>
+          <span class="star" data-value="5">&#9733;</span>
+        </div><br>
+        <div class="rating-number" id="rating-number">Rating: 0</div>
+      </div>
+
+     
+
+
+      <div class="image-overlay">All Information About BBA at Christ University</div>
+    </div>
+
+    <h1>Christ University - BBA Program</h1>
+
+    <h2 id="eligibility">BBA Specializations Offered:</h2>
+    <ul>
+      <li>Finance & Accounting</li>
+      <li>Marketing Management</li>
+      <li>Human Resource Management</li>
+      <li>International Business</li>
+      <li>Business Analytics</li>
+    </ul>
+
+    <h2>Eligibility Criteria:</h2>
+    <p>Pass in 10+2 (any stream) with minimum 60% marks. Selection through Christ University Entrance Test followed by Micro Presentation and Interview.</p>
+
+    <div class="fee-structure" id="fees">
+      <h2>Fee Structure:</h2>
+      <p>Tuition Fee (per year): ₹1,80,000 – ₹2,50,000 (varies by specialization)</p>
+      <p>Hostel Fee (optional, per year): ₹70,000 – ₹1,00,000</p>
+      <p>Other Charges (Exam, Admin etc.): ₹10,000 approx.</p>
+      <p><strong>Total (1st Year): ₹2.5–3.5 lakh approx.</strong></p>
+    </div>
+
+    <h2>Admission Process:</h2>
+    <p>Apply online through the Christ University portal. Appear for CUET + MP + Interview. Final selection based on overall performance.</p>
+
+    <h2>Scholarship:</h2>
+    <ul>
+      <li>Merit scholarships for high scorers</li>
+      <li>Financial aid for economically weaker sections</li>
+      <li>Special scholarships for sports/cultural achievers</li>
+    </ul>
+
+    <div class="reservation-policy">
+      <h2>Reservation Policy:</h2>
+      <p>No caste/category-based reservation. Selection purely on merit and performance.</p>
+    </div>
+
+    <h2 id="contact">Contact Us:</h2>
+    <p>Email: admissions@christuniversity.in<br>Phone: +91-8040129600</p>
+  </div>
+
+  <footer>
+    © 2025 Christ University | All rights reserved.
+  </footer>
+
+ <script src="colleges.js"></script>
+
+   
+</body>
+
+</html>
